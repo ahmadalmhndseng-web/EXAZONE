@@ -7,6 +7,7 @@ export interface BackgroundPreset {
   color: string; // Hex color for UI accents
   filter: string; // CSS filter to simulate mood
   category: 'product' | 'fashion';
+  gender?: 'female' | 'male';
 }
 
 export enum AppState {

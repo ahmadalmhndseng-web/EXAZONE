@@ -25,9 +25,16 @@ const PromptSelector: React.FC<PromptSelectorProps> = ({
   onCategoryChange
 }) => {
   const [mode, setMode] = useState<'preset' | 'custom'>('preset');
+  const [activeGender, setActiveGender] = useState<'female' | 'male'>('female');
 
-  // Filter presets based on active category
-  const displayedPresets = BACKGROUND_PRESETS.filter(p => p.category === activeCategory);
+  // Filter presets based on active category and gender (if fashion)
+  const displayedPresets = BACKGROUND_PRESETS.filter(p => {
+    if (p.category !== activeCategory) return false;
+    if (activeCategory === 'fashion') {
+      return p.gender === activeGender;
+    }
+    return true;
+  });
 
   return (
     <div className="space-y-6">
@@ -58,6 +65,34 @@ const PromptSelector: React.FC<PromptSelectorProps> = ({
         </button>
       </div>
 
+      {/* Gender Tabs (Only for Fashion) */}
+      {activeCategory === 'fashion' && (
+        <div className="flex justify-center mb-6 animate-fade-in">
+          <div className="inline-flex bg-gray-100 p-1 rounded-lg">
+            <button
+              onClick={() => setActiveGender('female')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                activeGender === 'female' 
+                  ? 'bg-white text-pink-600 shadow-sm' 
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              نساء 👩
+            </button>
+            <button
+              onClick={() => setActiveGender('male')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                activeGender === 'male' 
+                  ? 'bg-white text-blue-600 shadow-sm' 
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              رجال 👨
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Mode Selector (Presets vs Custom) */}
       <div className="flex border-b border-gray-200 mb-4">
         <button
@@ -81,7 +116,7 @@ const PromptSelector: React.FC<PromptSelectorProps> = ({
       </div>
 
       {mode === 'preset' ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 animate-fade-in">
           {displayedPresets.map((preset) => (
             <button
               key={preset.id}
@@ -109,13 +144,15 @@ const PromptSelector: React.FC<PromptSelectorProps> = ({
             value={customPrompt}
             onChange={(e) => onCustomPromptChange(e.target.value)}
             placeholder={activeCategory === 'fashion' 
-              ? "مثال: موديل ترتدي الملابس في حديقة عامة وقت الغروب، إضاءة ذهبية..." 
+              ? (activeGender === 'female' 
+                  ? "مثال: موديل ترتدي فستان صيفي في حديقة عامة وقت الغروب..." 
+                  : "مثال: موديل رجل يرتدي بدلة رسمية في مكتب حديث...")
               : "مثال: على صخرة سوداء في الفضاء، إضاءة نيون زرقاء..."}
             className="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none min-h-[120px] shadow-sm resize-none"
           />
           <p className="text-xs text-gray-500 bg-blue-50 p-2 rounded text-center">
             {activeCategory === 'fashion' 
-              ? "💡 نصيحة: حدد مواصفات الموديل (رجل/امرأة) والمكان بوضوح." 
+              ? "💡 نصيحة: حدد مواصفات الموديل والمكان بوضوح للحصول على أفضل نتيجة." 
               : "💡 نصيحة: صف الخامات (خشب، رخام) والإضاءة للحصول على أفضل نتيجة."}
           </p>
         </div>

@@ -111,7 +111,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '💃',
     color: '#e2e8f0',
     filter: 'brightness(1.02) contrast(1.02)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'female'
   },
   {
     id: 'model-street',
@@ -120,7 +121,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '🕶️',
     color: '#4b5563',
     filter: 'contrast(1.1) saturate(0.9)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'female'
   },
   {
     id: 'model-nature',
@@ -129,7 +131,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '🌳',
     color: '#166534',
     filter: 'saturate(1.1) brightness(1.05)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'female'
   },
   {
     id: 'model-casual',
@@ -138,7 +141,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '🏠',
     color: '#d97706',
     filter: 'sepia(0.1) brightness(1.05)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'female'
   },
   {
     id: 'model-fitness',
@@ -147,7 +151,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '🏋️‍♀️',
     color: '#3b82f6',
     filter: 'contrast(1.2) brightness(1.05)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'female'
   },
   {
     id: 'model-business',
@@ -156,7 +161,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '💼',
     color: '#1e293b',
     filter: 'contrast(1.05) saturate(0.8)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'female'
   },
   {
     id: 'model-winter',
@@ -165,7 +171,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '❄️',
     color: '#bae6fd',
     filter: 'brightness(1.1) contrast(0.9) hue-rotate(190deg) opacity(0.9)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'female'
   },
   {
     id: 'model-desert',
@@ -174,7 +181,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '🏜️',
     color: '#c2410c',
     filter: 'sepia(0.6) saturate(1.4) contrast(1.1)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'female'
   },
   {
     id: 'model-hijab-chic',
@@ -183,7 +191,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '🧕',
     color: '#be185d',
     filter: 'contrast(1.05) brightness(1.05)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'female'
   },
 
   // --- Fashion / Model Presets (Male) ---
@@ -194,7 +203,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '🤵',
     color: '#1e293b',
     filter: 'contrast(1.1) brightness(0.95) grayscale(0.2)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'male'
   },
   {
     id: 'male-model-street',
@@ -203,7 +213,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '🧢',
     color: '#4b5563',
     filter: 'contrast(1.15) saturate(0.9)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'male'
   },
   {
     id: 'male-model-suit',
@@ -212,7 +223,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '👔',
     color: '#0f172a',
     filter: 'sepia(0.1) contrast(1.1)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'male'
   },
   {
     id: 'male-model-gym',
@@ -221,7 +233,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '🏋️‍♂️',
     color: '#2563eb',
     filter: 'contrast(1.2) brightness(1.05)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'male'
   },
   {
     id: 'male-model-beach',
@@ -230,7 +243,8 @@ export const BACKGROUND_PRESETS: BackgroundPreset[] = [
     icon: '🏖️',
     color: '#0ea5e9',
     filter: 'saturate(1.2) brightness(1.1)',
-    category: 'fashion'
+    category: 'fashion',
+    gender: 'male'
   }
 ];
 
